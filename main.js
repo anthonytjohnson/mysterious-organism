@@ -25,6 +25,17 @@ const pAequorFactory = (number, array) => {
       }
       this.dna[randIndex] = newBase;
       return this.dna;
+    },
+    compareDNA(object) {
+      const common = this.dna.reduce((acc, curr, id, array) => {
+        if (array[id] === object.dna[id]) {
+          return acc + 1;
+        } else {
+          return acc;
+        }
+      }, 0);
+      const sharedPercentage = ((common / this.dna.length).toFixed(2) * 100);
+      console.log(`Specimen ${this.specimenNum} and Specimen ${object.specimenNum} have ${sharedPercentage}% DNA in common`)
     }
   }
 }
