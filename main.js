@@ -36,6 +36,10 @@ const pAequorFactory = (number, array) => {
       }, 0);
       const sharedPercentage = ((common / this.dna.length).toFixed(2) * 100);
       console.log(`Specimen ${this.specimenNum} and Specimen ${object.specimenNum} have ${sharedPercentage}% DNA in common`)
+    },
+    willLikelySurvive() {
+      const survivalDNA = this.dna.filter(el => el === "C" || el === "G");
+      return survivalDNA.length / this.dna.length >= 0.6;
     }
   }
 }
