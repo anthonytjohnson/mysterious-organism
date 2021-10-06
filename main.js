@@ -44,6 +44,16 @@ const pAequorFactory = (number, array) => {
   }
 }
 
+const goodSpecimens = [];
+let counter = 0;
+while (goodSpecimens.length < 30) {
+  let newSpec = pAequorFactory(counter, mockUpStrand());
+  if (newSpec.willLikelySurvive()) {
+    goodSpecimens.push(newSpec);
+  }
+  counter += 1;
+}
+
 
 
 
